@@ -5,7 +5,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('matricula').notNullable().primary();
     table.string('name').notNullable();
     table.string('email').notNullable();
-    table.string('cpf').notNullable().unique();
+    table.string('cpf', 11).notNullable();
   })
 }
 
