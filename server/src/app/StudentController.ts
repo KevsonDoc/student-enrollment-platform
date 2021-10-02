@@ -57,6 +57,22 @@ class Student {
     return response.status(200).json(student);
   }
 
+  async update(response: Response, request: Request) {
+    const { id, name, email} = request.params;
+
+    const student = await knex('student').where({ matricula: id }).first();
+
+    if (!student)
+      return response.status(404).json('Aluno Não encontrado');
+    
+    try {
+      await knex('student').where({ matricula: id }).update({ name, email });
+
+      return response.status(200).json('Informações de aluno foram atualizadas');
+    } catch (error) {
+      return response.status(500).json("Ops! Houve um erro. Não se preucupe estamos trabalhando para resolver");
+    }
+  }
 }
 
 export default Student;
