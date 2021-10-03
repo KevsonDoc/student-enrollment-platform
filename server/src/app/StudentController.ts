@@ -66,7 +66,7 @@ class Student {
     const { name, email } = request.body;
 
     if (!id)
-      return response.status(400).json('Nenhum Aluno encontrado');
+      return response.status(404).json('Nenhum Aluno encontrado');
 
     const student = await knex('student').where({ matricula: id }).first();
 
@@ -83,6 +83,26 @@ class Student {
       await knex('student').where({ matricula: id }).update({ name, email });
 
       return response.status(200).json('Informações de aluno foram atualizadas');
+    } catch (error) {
+      return response.status(500).json("Ops! Houve um erro. Não se preucupe estamos trabalhando para resolver");
+    }
+  }
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    if (!id)
+      return response.status(404).json('Nenhum Aluno encontrado');
+
+    const student = await knex('student').where({ matricula: id }).first();
+
+    if (!student)
+      return response.status(404).json('Aluno Não encontrado');
+    
+    try {
+      await knex('student').where({ matricula: id }).delete();
+
+      return response.status(200).json('Informações de aluno foram deletadas');
     } catch (error) {
       return response.status(500).json("Ops! Houve um erro. Não se preucupe estamos trabalhando para resolver");
     }

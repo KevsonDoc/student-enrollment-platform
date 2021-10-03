@@ -14,6 +14,7 @@ class Routes {
     this.routes.get('/:id', this.student.show);
     this.routes.post('/', this.student.create);
     this.routes.put('/:id', this.student.update);
+    this.routes.delete('/:id', this.student.delete);
   }
 }
 
