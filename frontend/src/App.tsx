@@ -1,8 +1,8 @@
-import Home from 'page/Home';
+import Form from 'page/Form';
 
 function App() {
   return (
-    <Home />
+    <Form />
   );
 }
 
