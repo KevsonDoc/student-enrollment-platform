@@ -12,11 +12,11 @@ const NavRoutes: React.FC = () => {
     <>
       <NavStudent />
       <Switch>
-        <Route path="/student/add">
-          <Form />
-        </Route>
         <Route path="/student/list">
           <ListStudent />
+        </Route>
+        <Route path="/student/add">
+          <Form />
         </Route>
         <Route path="/student/update">
           <UpdateStudent />

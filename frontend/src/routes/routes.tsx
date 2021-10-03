@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import Home from 'page/Home';
 import {
   Route,
@@ -8,14 +9,16 @@ import NavRoutes from './nav.routes';
 
 const Router: React.FC = () => {
   return (
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/student">
-        <NavRoutes />
-      </Route>
-    </Switch>
+    <AnimatePresence>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/student">
+          <NavRoutes />
+        </Route>
+      </Switch>
+    </AnimatePresence>
   )
 }
 
