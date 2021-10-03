@@ -1,0 +1,12 @@
+#list-student {
+  width: 100%;
+  height: 100%;
+  padding-left: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+#list-student section {
+  max-width: 700px;
+  width: 700px;
+}

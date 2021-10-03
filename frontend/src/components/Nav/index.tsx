@@ -2,18 +2,19 @@ import './styles.css';
 
 import list from 'assets/images/icons/list.svg';
 import add from 'assets/images/icons/plus-circle.svg';
+import { Link } from 'react-router-dom';
 
 const Nav: React.FC = () => {
   return (
     <nav>
-      <a href="">
+      <Link to="/student/add">
         <img src={add} alt="add" />
         Criar Aluno
-      </a>
-      <a href="">
+      </Link>
+      <Link to="/student/list">
         <img src={list} alt="add" />
         Listar Aluno
-      </a>
+      </Link>
     </nav>
   );
 }

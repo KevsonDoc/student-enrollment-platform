@@ -1,5 +1,7 @@
 import NavStudent from 'components/Nav';
 import Form from 'page/Form';
+import ListStudent from 'page/ListStudent';
+import UpdateStudent from 'page/UpdateStudent';
 import {
   Route,
   Switch,
@@ -12,6 +14,12 @@ const NavRoutes: React.FC = () => {
       <Switch>
         <Route path="/student/add">
           <Form />
+        </Route>
+        <Route path="/student/list">
+          <ListStudent />
+        </Route>
+        <Route path="/student/update">
+          <UpdateStudent />
         </Route>
       </Switch>
     </>
