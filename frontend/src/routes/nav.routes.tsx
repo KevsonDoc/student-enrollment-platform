@@ -18,7 +18,7 @@ const NavRoutes: React.FC = () => {
         <Route path="/student/add">
           <Form />
         </Route>
-        <Route path="/student/update">
+        <Route path="/student/update/:matricula">
           <UpdateStudent />
         </Route>
       </Switch>
