@@ -1,8 +1,8 @@
-import Form from 'page/Form';
+import Nav from 'components/Nav';
 
 function App() {
   return (
-    <Form />
+    <Nav />
   );
 }
 

@@ -1,0 +1,35 @@
+nav {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-primary-darker);
+  border-right: 2px solid var(--color-secundary);
+  filter: drop-shadow(-1px 1px 10px #000);
+}
+
+nav a {
+  width: 100%;
+  height: 50%;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+nav a + a {
+  border-top: 2px solid var(--color-secundary);
+}
+
+nav a img {
+  margin-right:  20px;
+  filter: invert(100%);
+}
+
+nav a:hover {
+  background: var(--color-primary-light);
+}

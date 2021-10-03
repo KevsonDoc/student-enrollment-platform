@@ -24,10 +24,6 @@
     padding: 0 2.4rem;
 }
 
-#page-teacher-form main fieldset + fieldset {
-    margin-top: 3.4rem;
-}
-
 #page-teacher-form main fieldset legend {
     font: 700 2.4rem Archivo;
     color: var(--color-text-title);
@@ -51,11 +47,6 @@
 
 #page-teacher-form main fieldset legend button:hover {
     color: var(--color-primary-dark);
-}
-
-#page-teacher-form main fieldset + fieldset .input-block + .textarea-block ,
-#page-teacher-form main fieldset + fieldset .select-block + .input-block {
-    margin-top: 2.4rem;
 }
 
 #page-teacher-form main label {
