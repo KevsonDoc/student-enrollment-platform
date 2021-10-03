@@ -24,8 +24,6 @@ const development = {
   useNullAsDefault: true
 }
 
-const knexConfig = process.env.NODE_ENV === 'development' ? development : production;
-
-const connection = knex(knexConfig);
+const connection = knex(development);
 
 export default connection;
