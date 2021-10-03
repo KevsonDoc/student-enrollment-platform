@@ -13,6 +13,11 @@ type TypeDataSudent = {
 }
 
 class Student {
+  validationEmail(email: string) {
+    const validationEmail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+    return validationEmail.test(email);
+  }
+
   async index(request: Request, response: Response) {
     const students = await knex('student').select('*');
     return response.status(200).json(students);
@@ -20,12 +25,11 @@ class Student {
 
   async create(request: Request, response: Response) {
     const { name, email, cpf  } : TypeDataSudent = request.body;
-    const validationEmail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     
     if (!name)
       return response.status(400).json('Prenncha o campo de nome');
     
-    if (!email || !validationEmail.test(email))
+    if (!email || !(new Student().validationEmail(email)))
       return response.status(400).json('E-mail inválido');
     
     if (!cpf || cpf.length >= 12 || cpf.length <= 10)
@@ -62,9 +66,15 @@ class Student {
     const { name, email } = request.body;
 
     if (!id)
-      return response.status(200).json('Nenhum Aluno encontrado');
+      return response.status(400).json('Nenhum Aluno encontrado');
 
     const student = await knex('student').where({ matricula: id }).first();
+
+    if (!name)
+      return response.status(400).json('Prenncha o campo de nome');
+    
+    if (!email || !(new Student().validationEmail(email)))
+      return response.status(400).json('E-mail inválido');
 
     if (!student)
       return response.status(404).json('Aluno Não encontrado');
