@@ -13,6 +13,7 @@ class Routes {
     this.routes.get('/', this.student.index);
     this.routes.get('/:id', this.student.show);
     this.routes.post('/', this.student.create);
+    this.routes.put('/:id', this.student.update);
   }
 }
 

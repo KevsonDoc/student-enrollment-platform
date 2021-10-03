@@ -57,8 +57,12 @@ class Student {
     return response.status(200).json(student);
   }
 
-  async update(response: Response, request: Request) {
-    const { id, name, email} = request.params;
+  async update(request: Request, response: Response) {
+    const { id } = request.params;
+    const { name, email } = request.body;
+
+    if (!id)
+      return response.status(200).json('Nenhum Aluno encontrado');
 
     const student = await knex('student').where({ matricula: id }).first();
 
