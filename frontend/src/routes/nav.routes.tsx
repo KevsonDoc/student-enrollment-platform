@@ -1,5 +1,5 @@
 import NavStudent from 'components/Nav';
-import Form from 'page/Form';
+import CreateStudent from 'page/CreateSudent';
 import ListStudent from 'page/ListStudent';
 import UpdateStudent from 'page/UpdateStudent';
 import {
@@ -16,7 +16,7 @@ const NavRoutes: React.FC = () => {
           <ListStudent />
         </Route>
         <Route path="/student/add">
-          <Form />
+          <CreateStudent />
         </Route>
         <Route path="/student/update/:matricula">
           <UpdateStudent />
