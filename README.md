@@ -39,3 +39,5 @@ npm install
   npm run start
  ```
  now just open your browser and access [http://localhost:3000/](http://localhost:3000/)
+
+ <img src="./2021-10-03-21-25-07.gif" alt="samples" >
