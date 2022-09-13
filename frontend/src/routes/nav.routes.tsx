@@ -1,11 +1,8 @@
-import NavStudent from 'components/Nav';
-import CreateStudent from 'page/CreateSudent';
-import ListStudent from 'page/ListStudent';
-import UpdateStudent from 'page/UpdateStudent';
-import {
-  Route,
-  Switch,
-} from 'react-router-dom';
+import NavStudent from "components/Nav";
+import CreateStudent from "page/CreateSudent";
+import ListStudent from "page/ListStudent";
+import UpdateStudent from "page/UpdateStudent";
+import { Route, Switch } from "react-router-dom";
 
 const NavRoutes: React.FC = () => {
   return (
@@ -23,7 +20,7 @@ const NavRoutes: React.FC = () => {
         </Route>
       </Switch>
     </>
-  )
-}
+  );
+};
 
 export default NavRoutes;

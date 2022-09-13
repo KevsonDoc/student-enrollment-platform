@@ -1,16 +1,16 @@
-import './styles.css';
+import "./styles.css";
 
-import home from 'assets/images/icons/home.svg';
-import list from 'assets/images/icons/list.svg';
-import add from 'assets/images/icons/plus-circle.svg';
-import { Link } from 'react-router-dom';
+import home from "assets/images/icons/home.svg";
+import list from "assets/images/icons/list.svg";
+import add from "assets/images/icons/plus-circle.svg";
+import { Link } from "react-router-dom";
 
 const Nav: React.FC = () => {
   return (
     <nav>
       <Link to="/">
         <img src={home} alt="add" />
-        Criar Aluno
+        Home
       </Link>
       <Link to="/student/list">
         <img src={list} alt="add" />
@@ -22,6 +22,6 @@ const Nav: React.FC = () => {
       </Link>
     </nav>
   );
-}
+};
 
 export default Nav;
